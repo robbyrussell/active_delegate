@@ -1,0 +1,6 @@
+ActiveDelegate
+==============
+
+Provides ActiveRecord with the ability to talk to multiple databases from a single model.
+
+TODO: Add more documentation
