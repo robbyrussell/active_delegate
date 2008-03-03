@@ -3,4 +3,14 @@ ActiveDelegate
 
 Provides ActiveRecord with the ability to talk to multiple databases from a single model.
 
+# app/models/master_database.rb
+class MasterDatabase < ActiveRecord::Base
+  handles_connection_for :master_database # <-- this matches the key from our database.yml
+end
+
+# app/models/animal.rb
+class Animal < ActiveRecord::Base
+  delegates_connection_to :master_database, :on => [:create, :save, :destroy]
+end
+
 TODO: Add more documentation
